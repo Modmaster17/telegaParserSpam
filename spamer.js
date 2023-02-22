@@ -7,6 +7,7 @@ SendMessage = async () => {
     await auth()
 
     for(let i = 0; i < 5; i++){
+        setTimeout(async () => {
         const inputUsers = {
             _: 'inputPeerUser',
             user_id: `${idHash[i].id_user}`,
@@ -18,7 +19,7 @@ SendMessage = async () => {
             random_id: Math.round(Math.random() * 1000)
 
         })
-
+        }, i * 5000)
     }
 }
 SendMessage()
